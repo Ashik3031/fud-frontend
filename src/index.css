@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --forest: #14301F;
+    --green-mid: #5E9440;
+    --lime: #8DC63F;
+    --orange: #F26B21;
+    --yellow: #FFD21F;
+    --offwhite: #F7F9F2;
+    --ink: #0E1A12;
+    --muted: #5B6B60;
+    --meat-red: #C8202F;
+    --seafood-blue: #1E5AA8;
+    --pulp-amber: #F5A623;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  [dir="rtl"] {
+    font-family: 'Noto Sans Arabic', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Outfit', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] .font-heading {
+    font-family: 'Noto Sans Arabic', 'Outfit', sans-serif;
+    letter-spacing: normal;
+  }
+}
+
+/* Custom subtle organic backdrop patterns */
+.bg-leaf-pattern {
+  background-image: radial-gradient(#8DC63F 0.75px, transparent 0.75px);
+  background-size: 24px 24px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F9F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5E9440;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #14301F;
+}
+
+/* Focus rings WCAG AA compliant */
+:focus-visible {
+  outline: 2px solid #F26B21;
+  outline-offset: 2px;
+}
+
+/* Subtle Hero animations */
+@keyframes leaf-sway {
+  0%, 100% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(10deg) translate(6px, -4px);
+  }
+}
+
+@keyframes leaf-drift {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(-6deg);
+  }
+}
+
+@keyframes steam-rise-1 {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scaleX(0.8) scaleY(0.8);
+  }
+  40% {
+    opacity: 0.65;
+    transform: translateY(-15px) scaleX(1.1) scaleY(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-38px) scaleX(1.5) scaleY(1.3);
+  }
+}
+
+@keyframes steam-rise-2 {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scaleX(0.9);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-20px) scaleX(1.2) translateX(4px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-46px) scaleX(1.6) translateX(-6px);
+  }
+}
+
+@keyframes ambient-glow {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.08);
+  }
+}
+
+.animate-leaf-sway {
+  animation: leaf-sway 6s ease-in-out infinite;
+}
+
+.animate-leaf-drift {
+  animation: leaf-drift 8s ease-in-out infinite;
+}
+
+.animate-steam-1 {
+  animation: steam-rise-1 3.5s ease-out infinite;
+}
+
+.animate-steam-2 {
+  animation: steam-rise-2 4.2s ease-out 1.2s infinite;
+}
+
+.animate-ambient-glow {
+  animation: ambient-glow 7s ease-in-out infinite;
+}
+

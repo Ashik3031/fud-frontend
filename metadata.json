@@ -1,0 +1,6 @@
+{
+  "name": "FUDIYO Frozen Food UAE",
+  "description": "FUDIYO™ Frozen Food by Eranad Exports Pvt Ltd – Kerala parotta, traditional snacks, instant gravy mixes, halal chicken and 100% natural fruit pulps in the UAE.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
