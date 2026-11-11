@@ -14,23 +14,30 @@ import {
   MapPin,
 } from 'lucide-react';
 
-const HERO_IMAGE_URL =
+const HERO_IMAGE_EN =
   'https://res.cloudinary.com/dugtxybef/image/upload/v1794397842/FUDIYO_Kerala_Chicken_Roast_Hero_Scene_1_mceujq.png';
+const HERO_IMAGE_AR =
+  'https://res.cloudinary.com/dugtxybef/image/upload/v1794398534/Kerala_Chicken_Curry_Feast_with_Parotta_1_zo83lc.png';
 
 export const PinnedHero: React.FC = () => {
   const { locale } = useRouter();
   const isEn = locale === 'en';
+  const heroImage = isEn ? HERO_IMAGE_EN : HERO_IMAGE_AR;
 
   return (
     <section className="relative min-h-[92vh] lg:min-h-screen bg-[#03180D] text-white flex flex-col justify-between pt-20 sm:pt-24 lg:pt-24 pb-6 sm:pb-8 overflow-hidden">
       {/* =========================================================================
-          1. FULL-WIDTH HERO BACKGROUND IMAGE (REPLACED VIDEO & NO OVERLAYS)
+          1. FULL-WIDTH HERO BACKGROUND IMAGE (DYNAMIC EN/AR)
           ========================================================================= */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img
-          src={HERO_IMAGE_URL}
-          alt="FUDIYO Authentic Kerala Cuisine"
-          className="absolute inset-0 w-full h-full object-cover object-[right_center] lg:object-[85%_center] xl:object-[80%_center]"
+          key={heroImage}
+          src={heroImage}
+          alt={isEn ? 'FUDIYO Authentic Kerala Cuisine' : 'فوديو - المطبخ الكيرالي الأصيل'}
+          className={`absolute inset-0 w-full h-full object-cover ${isEn
+              ? 'object-[right_center] lg:object-[85%_center] xl:object-[80%_center]'
+              : 'object-[left_center] lg:object-[15%_center] xl:object-[20%_center]'
+            }`}
         />
       </div>
 
